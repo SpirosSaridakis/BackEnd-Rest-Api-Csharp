@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "MarketplaceApi/1.0.0": {
+        "dependencies": {
+          "MarketplaceModel.Contracts": "1.0.0"
+        },
+        "runtime": {
+          "MarketplaceApi.dll": {}
+        }
+      },
+      "MarketplaceModel.Contracts/1.0.0": {
+        "runtime": {
+          "MarketplaceModel.Contracts.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MarketplaceApi/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MarketplaceModel.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

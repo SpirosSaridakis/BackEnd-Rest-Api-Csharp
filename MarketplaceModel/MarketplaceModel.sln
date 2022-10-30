@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketplaceModel.Contracts", "MarketplaceModel.Contracts\MarketplaceModel.Contracts.csproj", "{066CE40E-0208-48DF-8571-22D6BC52B0B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketplaceApi", "MarketplaceApi\MarketplaceApi.csproj", "{DED029DA-63AE-4664-B049-2C42CBA732D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{066CE40E-0208-48DF-8571-22D6BC52B0B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{066CE40E-0208-48DF-8571-22D6BC52B0B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{066CE40E-0208-48DF-8571-22D6BC52B0B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{066CE40E-0208-48DF-8571-22D6BC52B0B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DED029DA-63AE-4664-B049-2C42CBA732D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DED029DA-63AE-4664-B049-2C42CBA732D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DED029DA-63AE-4664-B049-2C42CBA732D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DED029DA-63AE-4664-B049-2C42CBA732D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

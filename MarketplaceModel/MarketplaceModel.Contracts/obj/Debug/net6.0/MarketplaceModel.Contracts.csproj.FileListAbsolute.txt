@@ -1,0 +1,12 @@
+C:\Users\spiro\Desktop\Coding\C#_Development\RestTest\MarketplaceModel\MarketplaceModel.Contracts\bin\Debug\net6.0\MarketplaceModel.Contracts.deps.json
+C:\Users\spiro\Desktop\Coding\C#_Development\RestTest\MarketplaceModel\MarketplaceModel.Contracts\bin\Debug\net6.0\MarketplaceModel.Contracts.dll
+C:\Users\spiro\Desktop\Coding\C#_Development\RestTest\MarketplaceModel\MarketplaceModel.Contracts\bin\Debug\net6.0\MarketplaceModel.Contracts.pdb
+C:\Users\spiro\Desktop\Coding\C#_Development\RestTest\MarketplaceModel\MarketplaceModel.Contracts\obj\Debug\net6.0\MarketplaceModel.Contracts.csproj.AssemblyReference.cache
+C:\Users\spiro\Desktop\Coding\C#_Development\RestTest\MarketplaceModel\MarketplaceModel.Contracts\obj\Debug\net6.0\MarketplaceModel.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\spiro\Desktop\Coding\C#_Development\RestTest\MarketplaceModel\MarketplaceModel.Contracts\obj\Debug\net6.0\MarketplaceModel.Contracts.AssemblyInfoInputs.cache
+C:\Users\spiro\Desktop\Coding\C#_Development\RestTest\MarketplaceModel\MarketplaceModel.Contracts\obj\Debug\net6.0\MarketplaceModel.Contracts.AssemblyInfo.cs
+C:\Users\spiro\Desktop\Coding\C#_Development\RestTest\MarketplaceModel\MarketplaceModel.Contracts\obj\Debug\net6.0\MarketplaceModel.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\spiro\Desktop\Coding\C#_Development\RestTest\MarketplaceModel\MarketplaceModel.Contracts\obj\Debug\net6.0\MarketplaceModel.Contracts.dll
+C:\Users\spiro\Desktop\Coding\C#_Development\RestTest\MarketplaceModel\MarketplaceModel.Contracts\obj\Debug\net6.0\refint\MarketplaceModel.Contracts.dll
+C:\Users\spiro\Desktop\Coding\C#_Development\RestTest\MarketplaceModel\MarketplaceModel.Contracts\obj\Debug\net6.0\MarketplaceModel.Contracts.pdb
+C:\Users\spiro\Desktop\Coding\C#_Development\RestTest\MarketplaceModel\MarketplaceModel.Contracts\obj\Debug\net6.0\ref\MarketplaceModel.Contracts.dll

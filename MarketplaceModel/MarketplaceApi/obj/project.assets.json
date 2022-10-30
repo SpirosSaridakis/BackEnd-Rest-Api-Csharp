@@ -1,0 +1,92 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "MarketplaceModel.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/MarketplaceModel.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MarketplaceModel.Contracts.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MarketplaceModel.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../MarketplaceModel.Contracts/MarketplaceModel.Contracts.csproj",
+      "msbuildProject": "../MarketplaceModel.Contracts/MarketplaceModel.Contracts.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "MarketplaceModel.Contracts >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\spiro\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\spiro\\Desktop\\Coding\\C#_Development\\RestTest\\MarketplaceModel\\MarketplaceApi\\MarketplaceApi.csproj",
+      "projectName": "MarketplaceApi",
+      "projectPath": "C:\\Users\\spiro\\Desktop\\Coding\\C#_Development\\RestTest\\MarketplaceModel\\MarketplaceApi\\MarketplaceApi.csproj",
+      "packagesPath": "C:\\Users\\spiro\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\spiro\\Desktop\\Coding\\C#_Development\\RestTest\\MarketplaceModel\\MarketplaceApi\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\spiro\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "C:\\Users\\spiro\\Desktop\\Coding\\C#_Development\\RestTest\\MarketplaceModel\\MarketplaceModel.Contracts\\MarketplaceModel.Contracts.csproj": {
+              "projectPath": "C:\\Users\\spiro\\Desktop\\Coding\\C#_Development\\RestTest\\MarketplaceModel\\MarketplaceModel.Contracts\\MarketplaceModel.Contracts.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
