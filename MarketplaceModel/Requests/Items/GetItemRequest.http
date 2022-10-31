@@ -1,9 +1,2 @@
-POST https://localhost:7209/CreateItem
-Content-Type: application/json
-
-{
-    "name": "Laptop",
-    "discription": "A portable Computor",
-    "price": "1500",
-    "dayAdded": "2022-04-08T11:00:00"
-}
+@id = 00000000-0000-0000-0000-000000000000
+GET  http://localhost:5241/CreateItem/{{id}}
