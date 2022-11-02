@@ -15,9 +15,12 @@ namespace MarketplaceApi.Models
         public decimal Price { get => price;}
         public DateTime DayAdded{get => dayAdded;}
 
-        public Item(){
-            //Todo, add the constructor functionallity
-
+        public Item(Guid Aid, string Aname, string Adiscription , decimal Aprice, DateTime AdayAdded){
+            id=Aid;
+            name=Aname;
+            discription=Adiscription;
+            price=Aprice;
+            dayAdded=AdayAdded;
         }
 
     }
