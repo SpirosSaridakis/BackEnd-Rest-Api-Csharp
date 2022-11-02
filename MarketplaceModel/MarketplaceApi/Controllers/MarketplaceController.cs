@@ -1,7 +1,7 @@
 using MarketplaceModel.Contracts.Items;
 using Microsoft.AspNetCore.Mvc;
 using MarketplaceApi.Models;
-using MarketplaceModel.Services.Items;
+using MarketplaceApi.Services.Items;
 namespace MarketplaceApi.Controllers;
 
 
@@ -9,15 +9,23 @@ namespace MarketplaceApi.Controllers;
     [Route("/CreateItem")]//This makes it so that every request needs to start with /CreateItem and then the methods just expand the route
     public class MarketplaceController : ControllerBase
     {
+        //this interface will be used for dependency injection
         private readonly IitemService _itemService;
-        [HttpPost()]
+
+    public MarketplaceController(IitemService itemService)
+    {
+        _itemService = itemService;
+    }
+
+    [HttpPost()]
         public IActionResult CreateItem(CreateItemRequest request)
         {
             //Creating the Item object by getting the properties of the sent request that the controller recieves
             //Mapping the data that we get in the request to c#, which we use for our application
             Item item = new Item(Guid.NewGuid(),request.name,request.discription,request.price,request.dayAdded);
 
-            //TODO save the item in the database
+            //Using the CreateItem method from our interface by passing it the item we just created
+            _itemService.CreateItem(item);
 
 
             //Creating a CreateItemResponse object to return to the client, it will contain the attributes of the object we created
@@ -36,7 +44,9 @@ namespace MarketplaceApi.Controllers;
         [HttpGet("{id:guid}")]
         public IActionResult GetItem(Guid id)
         {
-            return Ok(id);
+            Item item = _itemService.GetItem(id);
+            CreateItemResponse response = new CreateItemResponse(item.Id,item.Name,item.Discription,item.Price,item.DayAdded);
+            return Ok(response);
         }
 
         [HttpPut("{id:guid}")]
