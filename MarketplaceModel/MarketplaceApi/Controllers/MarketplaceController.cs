@@ -41,6 +41,8 @@ namespace MarketplaceApi.Controllers;
             response);
         }
 
+        //When this endpoint is called we create an instance of the class in which we have the methods for our "database"
+        //Then, when we get the item with the given id we create a response and feed it back to the client
         [HttpGet("{id:guid}")]
         public IActionResult GetItem(Guid id)
         {
@@ -49,15 +51,21 @@ namespace MarketplaceApi.Controllers;
             return Ok(response);
         }
 
+        //Here we create an item and again using the interface send the item to the "database"
         [HttpPut("{id:guid}")]
-        public IActionResult InsertItem(Guid id, UpdateItem request)
+        public IActionResult UpdateItem(Guid id, UpdateItem request)
         {
-            return Ok(request);
+            Item item = new Item(id,request.name,request.discription,request.price,request.dayAdded);
+            _itemService.UpdateItem(item);
+            //TODO return 201 if a new item was created
+            return NoContent();
         }
 
+        //Here we will search for the item in question and if it exists delete it
         [HttpDelete("{id:guid}")]
         public IActionResult DeleteItem(Guid id)
         {
-            return Ok(id);
+            _itemService.DeleteItem(id);
+            return NoContent();
         }
     }

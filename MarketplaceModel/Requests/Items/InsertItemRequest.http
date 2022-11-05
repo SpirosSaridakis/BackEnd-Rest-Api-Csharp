@@ -1,4 +1,4 @@
-@id = 00000000-0000-0000-0000-000000000000
+@id = 3710d38c-1e7d-4de2-82b8-8671ba73b7ae
 PUT http://localhost:5241/CreateItem/{{id}}
 Content-Type: application/json
 

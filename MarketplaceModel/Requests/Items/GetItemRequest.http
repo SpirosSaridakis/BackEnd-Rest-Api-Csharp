@@ -1,2 +1,2 @@
-@id = ff8cb8c9-897c-49a1-95d2-b4fbee59dc4c
+@id = 3710d38c-1e7d-4de2-82b8-8671ba73b7ae
 GET  http://localhost:5241/CreateItem/{{id}}

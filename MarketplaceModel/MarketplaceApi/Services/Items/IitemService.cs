@@ -7,5 +7,10 @@ namespace MarketplaceApi.Services.Items
     {
         void CreateItem(Item item);
         Item GetItem(Guid id);
+
+        void DeleteItem(Guid id);
+
+        void UpdateItem(Item item);
+
     }
 }

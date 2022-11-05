@@ -15,9 +15,21 @@ namespace MarketplaceApi.Services.Items
             _items.Add(item.Id,item);
         }
 
+        //Removing the item with a specific id
+        public void DeleteItem(Guid id)
+        {
+            _items.Remove(id);
+        }
+
+        //Returning the item which has a specific id
         public Item GetItem(Guid id){
             return _items[id];
+        }
 
+        //Simply adding the new item to the dictionary
+        public void UpdateItem(Item item)
+        {
+            _items[item.Id] = item;
         }
     }
 }
