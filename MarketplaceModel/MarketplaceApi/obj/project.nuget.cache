@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "UVPGHLflmrjDAjGgRNZp4XRFEkUHFgaeDaBnwqn0Wlfv4YMJlnfCQKcOubiEJe58CkzYKLHlNQRlajPHb158pA==",
+  "dgSpecHash": "/kcojmepU4R58M+0v4PnZ0GZVTuxCJDsRAJ3tRbrkmF7CPnTBmdF51BpfFgHbUPCMCtB/4iD1BdsYpWpbD5s/Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\spiro\\Desktop\\Coding\\C#_Development\\RestTest\\MarketplaceModel\\MarketplaceApi\\MarketplaceApi.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\spiro\\.nuget\\packages\\erroror\\1.0.1\\erroror.1.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

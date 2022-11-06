@@ -1,4 +1,7 @@
+using ErrorOr;
 using MarketplaceApi.Models;
+using MarketplaceApi.ServiceErrors;
+
 namespace MarketplaceApi.Services.Items
 {
     //Implementing the interface, this would be used to store items in the database but in this example we are storing them in memory
@@ -22,8 +25,14 @@ namespace MarketplaceApi.Services.Items
         }
 
         //Returning the item which has a specific id
-        public Item GetItem(Guid id){
-            return _items[id];
+        public ErrorOr<Item> GetItem(Guid id){
+            //The error or package just converts the objects from items to errors
+            //Here we check if the dictionary contains an item with a specific id and if it does it returns it, otherwise it returns an error object
+            if(_items.TryGetValue(id,out var item)){//out var is used to pass an item by reference without initializing it
+                return item;
+            }
+            return Errors.Items.NotFound;
+            
         }
 
         //Simply adding the new item to the dictionary
