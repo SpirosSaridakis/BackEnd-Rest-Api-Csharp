@@ -2,6 +2,9 @@ using MarketplaceModel.Contracts.Items;
 using Microsoft.AspNetCore.Mvc;
 using MarketplaceApi.Models;
 using MarketplaceApi.Services.Items;
+using ErrorOr;
+using MarketplaceApi.ServiceErrors;
+
 namespace MarketplaceApi.Controllers;
 
 
@@ -46,7 +49,18 @@ namespace MarketplaceApi.Controllers;
         [HttpGet("{id:guid}")]
         public IActionResult GetItem(Guid id)
         {
-            Item item = _itemService.GetItem(id);
+            ErrorOr<Item> getItemResult = _itemService.GetItem(id);
+            
+            //We need this if to tell if the result of the GetItem method is a list of errors or an item object
+            if(getItemResult.IsError && getItemResult.FirstError == Errors.Items.NotFound){
+                //if this is true then the error we got was a not found error
+                return NotFound();
+            }
+
+            //We are clear of errors and we use the Value property to get the item that was requested
+            Item item = getItemResult.Value;
+
+            
             CreateItemResponse response = new CreateItemResponse(item.Id,item.Name,item.Discription,item.Price,item.DayAdded);
             return Ok(response);
         }

@@ -22,3 +22,4 @@ C:\Users\spiro\Desktop\Coding\C#_Development\RestTest\MarketplaceModel\Marketpla
 C:\Users\spiro\Desktop\Coding\C#_Development\RestTest\MarketplaceModel\MarketplaceApi\obj\Debug\net6.0\MarketplaceApi.pdb
 C:\Users\spiro\Desktop\Coding\C#_Development\RestTest\MarketplaceModel\MarketplaceApi\obj\Debug\net6.0\MarketplaceApi.genruntimeconfig.cache
 C:\Users\spiro\Desktop\Coding\C#_Development\RestTest\MarketplaceModel\MarketplaceApi\obj\Debug\net6.0\ref\MarketplaceApi.dll
+C:\Users\spiro\Desktop\Coding\C#_Development\RestTest\MarketplaceModel\MarketplaceApi\bin\Debug\net6.0\ErrorOr.dll
