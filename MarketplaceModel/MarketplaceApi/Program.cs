@@ -12,7 +12,8 @@ builder.Services.AddSingleton<IitemService,ItemService>();
 
 var app = builder.Build();
 {
-
+//The ExceptionHandler method just re-routes the request to the /error endpoint which will be handled by the ErrorController
+app.UseExceptionHandler("/error");
 app.UseHttpsRedirection();
 app.MapControllers();
 app.Run();
