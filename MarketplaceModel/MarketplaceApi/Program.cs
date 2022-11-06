@@ -20,4 +20,4 @@ app.Run();
 
 
 }
-//Gia na trekseis to project prepei na eisai sto dir \MarketplaceModel\MarketplaceApi\
+//Gia na trekseis to project prepei na eisai sto dir \MarketplaceModel
