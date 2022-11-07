@@ -1,2 +1,2 @@
-@id = 3710d38c-1e7d-4de2-82b8-8671ba73b7ae
+@id = 76446e80-6ba5-4b99-a94f-1b5e0f258e42
 DELETE http://localhost:5241/CreateItem/{{id}}
