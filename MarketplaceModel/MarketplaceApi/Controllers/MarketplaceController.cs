@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using MarketplaceApi.Models;
 using MarketplaceApi.Services.Items;
 using ErrorOr;
-using MarketplaceApi.ServiceErrors;
+
 
 namespace MarketplaceApi.Controllers;
 
@@ -24,7 +24,13 @@ namespace MarketplaceApi.Controllers;
         {
             //Creating the Item object by getting the properties of the sent request that the controller recieves
             //Mapping the data that we get in the request to c#, which we use for our application
-            Item item = new Item(Guid.NewGuid(),request.name,request.discription,request.price,request.dayAdded);
+            ErrorOr<Item> CreationResult = Item.Create(request.name,request.discription,request.price,request.dayAdded);
+
+            if(CreationResult.IsError){
+                return Problem(CreationResult.Errors);
+            }
+
+            Item item = CreationResult.Value;
 
             //Using the CreateItem method from our interface by passing it the item we just created
             //Also using an error or object to store the result given by the CreateItem method
@@ -56,7 +62,14 @@ namespace MarketplaceApi.Controllers;
         [HttpPut("{id:guid}")]
         public IActionResult UpdateItem(Guid id, UpdateItem request)
         {
-            Item item = new Item(id,request.name,request.discription,request.price,request.dayAdded);
+            ErrorOr<Item> CreationResult = Item.Create(request.name,request.discription,request.price,request.dayAdded);
+
+            if(CreationResult.IsError){
+                return Problem(CreationResult.Errors);
+            }
+
+            Item item = CreationResult.Value;    
+
             ErrorOr<Updated> updateResult = _itemService.UpdateItem(item);
             return updateResult.Match(updated => Ok(), errors => Problem(errors));
         }
