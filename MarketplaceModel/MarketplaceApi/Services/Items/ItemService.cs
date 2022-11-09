@@ -12,16 +12,18 @@ namespace MarketplaceApi.Services.Items
         //It is also static cause we dont want it to be created again every time we create an object(we want only one Dictionary for all requests)
         private static readonly Dictionary<Guid,Item> _items = new();
 
-        public void CreateItem(Item item)
+        public ErrorOr<Created> CreateItem(Item item)
         {
             //Here we have the item id as a key and the object as the value 
             _items.Add(item.Id,item);
+            return Result.Created;
         }
 
         //Removing the item with a specific id
-        public void DeleteItem(Guid id)
+        public ErrorOr<Deleted> DeleteItem(Guid id)
         {
             _items.Remove(id);
+            return Result.Deleted;
         }
 
         //Returning the item which has a specific id
@@ -36,9 +38,10 @@ namespace MarketplaceApi.Services.Items
         }
 
         //Simply adding the new item to the dictionary
-        public void UpdateItem(Item item)
+        public ErrorOr<Updated> UpdateItem(Item item)
         {
             _items[item.Id] = item;
+            return Result.Updated;
         }
     }
 }
