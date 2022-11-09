@@ -6,7 +6,8 @@ namespace MarketplaceApi.Models
     //This class will essentially be used to use item objects that we can extract from the http requests that the controllers get
     public class Item
     {
-        const int minNameLength = 3;
+        // The const values are for input validation
+        const int minNameLength = 3; 
         const int maxNameLength=20;
         const int minDiscriptionLength = 4;
         const int maxDiscriptionLength = 30;
@@ -31,8 +32,10 @@ namespace MarketplaceApi.Models
             dayAdded=AdayAdded;
         }
 
-        public static ErrorOr<Item> Create(string Aname, string Adiscription, decimal Aprice, DateTime AdayAdded){
 
+        public static ErrorOr<Item> Create(string Aname, string Adiscription, decimal Aprice, DateTime AdayAdded){
+            //This function is used to implement some Input controll during the creation of an item object from the data 
+            //we got from a client request
             List<Error> errors = new List<Error>();
 
             if(Aname.Length < minNameLength || Aname.Length > maxNameLength){

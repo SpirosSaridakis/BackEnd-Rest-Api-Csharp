@@ -23,13 +23,15 @@ namespace MarketplaceApi.Controllers;
         public IActionResult CreateItem(CreateItemRequest request)
         {
             //Creating the Item object by getting the properties of the sent request that the controller recieves
-            //Mapping the data that we get in the request to c#, which we use for our application
+            //Using the Create function to verify that the contents of the request are valid
             ErrorOr<Item> CreationResult = Item.Create(request.name,request.discription,request.price,request.dayAdded);
 
+            //If the result is an error we send things over to the ErrorController
             if(CreationResult.IsError){
                 return Problem(CreationResult.Errors);
             }
 
+            //If not then CreationResult holds an item as its value 
             Item item = CreationResult.Value;
 
             //Using the CreateItem method from our interface by passing it the item we just created
@@ -62,6 +64,7 @@ namespace MarketplaceApi.Controllers;
         [HttpPut("{id:guid}")]
         public IActionResult UpdateItem(Guid id, UpdateItem request)
         {
+            //Since we create an item in this function we also call the create function here and follow the same tactic 
             ErrorOr<Item> CreationResult = Item.Create(request.name,request.discription,request.price,request.dayAdded);
 
             if(CreationResult.IsError){
