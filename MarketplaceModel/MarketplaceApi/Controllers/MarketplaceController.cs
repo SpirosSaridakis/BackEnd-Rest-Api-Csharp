@@ -80,7 +80,7 @@ namespace MarketplaceApi.Controllers;
         //Here we will search for the item in question and if it exists delete it
         [HttpDelete("{id:guid}")]
         public IActionResult DeleteItem(Guid id)
-        {
+        { 
             ErrorOr<Deleted> deleteResult = _itemService.DeleteItem(id);
             //Doing the same as in GetItem
             return deleteResult.Match(deleted => NoContent(), errors => Problem(errors));
