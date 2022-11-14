@@ -14,7 +14,7 @@ public static class Errors{
         
         public static Error NotFound => Error.NotFound(code:"Item.NotFound",description:"The item requested was not found in the database");
         //the error object comes from the ErrorOr package, every error has a code, a description and a type
-
+        public static Error EmptyDatabase =>Error.NotFound(code:"Item.NotFound",description:"There are currently no items in the database");
     }
 
 }

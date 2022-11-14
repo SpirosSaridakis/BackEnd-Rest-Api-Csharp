@@ -1,10 +1,10 @@
-@id = 3710d38c-1e7d-4de2-82b8-8671ba73b7ae
+@id = 2b6752de-3787-4268-81cb-4d47541a7a41
 PUT http://localhost:5241/CreateItem/{{id}}
 Content-Type: application/json
 
 {
     "name": "Laptop",
-    "discription": "A portable Computor",
-    "price": "1500",
+    "discription": "A portable Computer",
+    "price": "1600",
     "dayAdded": "2022-04-08T11:00:00"
 }

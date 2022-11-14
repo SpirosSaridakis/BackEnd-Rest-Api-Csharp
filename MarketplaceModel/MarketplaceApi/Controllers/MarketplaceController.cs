@@ -60,6 +60,14 @@ namespace MarketplaceApi.Controllers;
             
         }
 
+        [HttpGet()]
+        public IActionResult GetAllItems(){
+            //CreateItemResponse response = new CreateItemResponse();
+            ErrorOr<List<Item>> getItemsResult = _itemService.GetItems();
+            return getItemsResult.Match(List => Ok(getItemsResult.Value),errors => Problem(errors));
+        }
+
+
         //Here we create an item and again using the interface send the item to the "database"
         [HttpPut("{id:guid}")]
         public IActionResult UpdateItem(Guid id, UpdateItem request)

@@ -10,7 +10,9 @@ namespace MarketplaceApi.Services.Items
         ErrorOr<Created> CreateItem(Item item);
 
         // Since an error might occure with this method, we use ErrorOr and it will either return an error or an item object
-        ErrorOr<Item> GetItem(Guid id); 
+        ErrorOr<Item> GetItem(Guid id);
+
+        ErrorOr<List<Item>> GetItems(); 
 
         ErrorOr<Deleted> DeleteItem(Guid id);
 
