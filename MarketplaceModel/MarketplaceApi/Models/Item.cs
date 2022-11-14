@@ -1,8 +1,17 @@
+using ErrorOr;
+using MarketplaceApi.ServiceErrors;
+
 namespace MarketplaceApi.Models
 {
     //This class will essentially be used to use item objects that we can extract from the http requests that the controllers get
     public class Item
     {
+        // The const values are for input validation
+        const int minNameLength = 3; 
+        const int maxNameLength=20;
+        const int minDiscriptionLength = 4;
+        const int maxDiscriptionLength = 30;
+        const decimal minPrice = 0;
         Guid id;
         String name;
         string discription;
@@ -15,12 +24,37 @@ namespace MarketplaceApi.Models
         public decimal Price { get => price;}
         public DateTime DayAdded{get => dayAdded;}
 
-        public Item(Guid Aid, string Aname, string Adiscription , decimal Aprice, DateTime AdayAdded){
+        private Item(Guid Aid, string Aname, string Adiscription , decimal Aprice, DateTime AdayAdded){
             id=Aid;
             name=Aname;
             discription=Adiscription;
             price=Aprice;
             dayAdded=AdayAdded;
+        }
+
+
+        public static ErrorOr<Item> Create(string Aname, string Adiscription, decimal Aprice, DateTime AdayAdded){
+            //This function is used to implement some Input controll during the creation of an item object from the data 
+            //we got from a client request
+            List<Error> errors = new List<Error>();
+
+            if(Aname.Length < minNameLength || Aname.Length > maxNameLength){
+                errors.Add(Errors.Items.InvalidName);
+            }
+
+            if(Adiscription.Length < minDiscriptionLength || Adiscription.Length > maxDiscriptionLength){
+                errors.Add(Errors.Items.InvalidDiscription);
+            }
+
+            if(Aprice <= minPrice){
+                errors.Add(Errors.Items.InvalidPrice);
+            }
+
+            if(errors.Count>0){
+
+                return errors;
+            }
+            return new Item(Guid.NewGuid(), Aname, Adiscription,Aprice,AdayAdded );
         }
 
     }

@@ -4,6 +4,6 @@ Content-Type: application/json
 {
     "name": "Laptop",
     "discription": "A portable Computor",
-    "price": "1500",
+    "price": "0.2",
     "dayAdded": "2022-04-08T11:00:00"
 }

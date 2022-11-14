@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using MarketplaceApi.Models;
 using MarketplaceApi.Services.Items;
 using ErrorOr;
-using MarketplaceApi.ServiceErrors;
+
 
 namespace MarketplaceApi.Controllers;
 
@@ -23,8 +23,16 @@ namespace MarketplaceApi.Controllers;
         public IActionResult CreateItem(CreateItemRequest request)
         {
             //Creating the Item object by getting the properties of the sent request that the controller recieves
-            //Mapping the data that we get in the request to c#, which we use for our application
-            Item item = new Item(Guid.NewGuid(),request.name,request.discription,request.price,request.dayAdded);
+            //Using the Create function to verify that the contents of the request are valid
+            ErrorOr<Item> CreationResult = Item.Create(request.name,request.discription,request.price,request.dayAdded);
+
+            //If the result is an error we send things over to the ErrorController
+            if(CreationResult.IsError){
+                return Problem(CreationResult.Errors);
+            }
+
+            //If not then CreationResult holds an item as its value 
+            Item item = CreationResult.Value;
 
             //Using the CreateItem method from our interface by passing it the item we just created
             //Also using an error or object to store the result given by the CreateItem method
@@ -56,7 +64,15 @@ namespace MarketplaceApi.Controllers;
         [HttpPut("{id:guid}")]
         public IActionResult UpdateItem(Guid id, UpdateItem request)
         {
-            Item item = new Item(id,request.name,request.discription,request.price,request.dayAdded);
+            //Since we create an item in this function we also call the create function here and follow the same tactic 
+            ErrorOr<Item> CreationResult = Item.Create(request.name,request.discription,request.price,request.dayAdded);
+
+            if(CreationResult.IsError){
+                return Problem(CreationResult.Errors);
+            }
+
+            Item item = CreationResult.Value;    
+
             ErrorOr<Updated> updateResult = _itemService.UpdateItem(item);
             return updateResult.Match(updated => Ok(), errors => Problem(errors));
         }
@@ -64,7 +80,7 @@ namespace MarketplaceApi.Controllers;
         //Here we will search for the item in question and if it exists delete it
         [HttpDelete("{id:guid}")]
         public IActionResult DeleteItem(Guid id)
-        {
+        { 
             ErrorOr<Deleted> deleteResult = _itemService.DeleteItem(id);
             //Doing the same as in GetItem
             return deleteResult.Match(deleted => NoContent(), errors => Problem(errors));

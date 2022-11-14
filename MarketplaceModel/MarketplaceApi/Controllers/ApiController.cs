@@ -9,6 +9,7 @@ namespace MarketplaceApi.Controllers
     {
         /*This function is used to identify a problem with a given request*/
         protected IActionResult Problem(List<Error> errors){
+            
             Error firstError = errors[0];
 
             /*This creates a variable that will contain the status code of the problem that was encountered*/
