@@ -37,10 +37,22 @@ namespace MarketplaceApi.Services.Items
             
         }
 
+        public ErrorOr<List<Item>> GetItems(){
+            List<Item> items = new List<Item>();
+            foreach (var item in _items){
+                items.Add(item.Value);
+            }
+            if(items.Count == 0){
+                return Errors.Items.EmptyDatabase;
+            }
+            return items;
+        }
+
         //Simply adding the new item to the dictionary
         public ErrorOr<Updated> UpdateItem(Item item)
         {
-            _items[item.Id] = item;
+            _items.Remove(item.Id);
+            _items.Add(item.Id,item);
             return Result.Updated;
         }
     }

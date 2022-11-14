@@ -2,8 +2,8 @@ POST https://localhost:7209/CreateItem
 Content-Type: application/json
 
 {
-    "name": "Laptop",
-    "discription": "A portable Computor",
-    "price": "0.2",
+    "name": "Dice Set",
+    "discription": "Pretty thingies",
+    "price": "8.70",
     "dayAdded": "2022-04-08T11:00:00"
 }
